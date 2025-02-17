@@ -1,0 +1,103 @@
+{% extends "index.html" %}
+{% load static %}
+
+  
+
+          {% block name %}     
+      <div class="container mt-5">
+        <div class="row align-items-center bg-body-secondary p-4 p-md-5 mb-4 rounded text-body-emphasis" style="border-radius: 20px" >
+          <div class="col-md-6 px-0"  >
+            <h1 class="display-4 fst-italic">Media-Mate </h1>
+            <p class="lead my-3">This <b>NLP-based media recommendation project</b> suggests movies, songs, and books using a combination of popularity-based, user-based, and collaborative filtering techniques. It analyzes user input, media descriptions, and reviews to recommend relevant content by identifying key features like genre and mood. Popularity-based filtering suggests the most widely appreciated content, user-based filtering personalizes recommendations based on individual preferences, and collaborative filtering finds patterns in similar users’ choices. The system delivers categorized recommendations through a Django interface, offering an engaging, data-driven experience for discovering media.</p>
+            <p class="lead mb-0"><a href="/About" class="text-body-emphasis fw-bold">Learn More About Media-Mate...</a></p>
+          </div>
+          <div class="col-md-6 text-center">
+            <img src="{% static 'media/multimedia.svg' %}" class="img-fluid" style="border-radius: 20px; width:   400px; height: auto;" alt="unable to load the image">
+
+
+          </div>
+        </div>
+      </div>
+      
+                
+
+  
+
+
+                    <div class="container" id="our-offerings">
+                    <div class="container px-4 py-5 mt-4" id="icon-grid">
+                      <h2 class="pb-2 border-bottom" style="font-size: xx-large ; font-family: Georgia, 'Times New Roman', Times, serif; font-weight: 600;">Our Offerings</h2>
+                  
+                      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+                        <div class="col d-flex align-items-start">
+                          <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#calendar3"></use></svg>
+                          <div>
+                            <h3 class="fw-bold mb-2  fs-4 text-body-emphasis">All-in-One Personalized Recommendation  </h3>
+                            <p>Media-Mate unites the best of personalization to bring you tailored suggestions for books, movies, and songs—all in one seamless experience.</p>
+                          </div>
+                        </div>
+                       <div class="col d-flex align-items-start">
+                          <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#calendar3"></use></svg>
+                          <div>
+                            <h3 class="fw-bold mb-2  fs-4 text-body-emphasis">Unique Filtering Approaches</h3>
+                            <p>Media Mate combines popularity, content-based, collaborative, and hybrid approaches to deliver highly personalized recommendations tailored to your unique tastes.</p>
+                          </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                          <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#calendar3"></use></svg>
+                          <div>
+                            <h3 class="fw-bold mb-2  fs-4 text-body-emphasis">Free Of Cost</h3>
+                            <p>Explore a curated collection of books, movies, and songs tailored to your unique preferences, offering a truly personalized experience, all completely free of charge!</p>
+                          </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                          <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#home"></use></svg>
+                          <div>
+                            <h3 class="fw-bold mb-2 fs-4 text-body-emphasis">Real Life Application</h3>
+                            <p>Media Mate provides the same personalized recommendation system as Netflix for movies, Spotify for music, and Kindle for books, providing a seamless and tailored experience across all categories!</p>
+                          </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                          <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#speedometer2"></use></svg>
+                          <div>
+                            <h3 class="fw-bold mb-2 fs-4 text-body-emphasis">Content Based Filtering</h3>
+                            <p>Content-based filtering recommends items by analyzing their attributes and suggesting similar items based on what you’ve previously liked, ensuring a personalized experience tailored to your interests.</p>
+                          </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                          <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#toggles2"></use></svg>
+                          <div>
+                            <h3 class="fw-bold mb-2 fs-4 text-body-emphasis">Popularity Based Filtering</h3>
+                            <p>Popularity-based filtering recommends items based on their overall popularity, highlighting the most liked, viewed, or purchased items to provide users with trending content.</p>
+                          </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                          <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#geo-fill"></use></svg>
+                          <div>
+                            <h3 class="fw-bold mb-2 fs-4 text-body-emphasis">Collaborative Filtering</h3>
+                            <p>Collaborative filtering recommends items based on the preferences and behaviors of similar users, leveraging patterns in user interactions to suggest content that others with similar tastes have enjoyed.</p>
+                          </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                          <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#tools"></use></svg>
+                          <div>
+                            <h3 class="fw-bold mb-2 fs-4 text-body-emphasis">Hybrid Filtering</h3>
+                            <p>Hybrid filtering combines multiple recommendation approaches, such as popularity, content-based, and collaborative filtering, to provide more accurate and diverse suggestions by leveraging the strengths of each method.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="container" style="background-color: #e9ecef; border-radius: 10px; margin-top: 20px; ">
+                      <p style="padding: 1rem;"><b>NOTE:-</b>The recommendation models in Media Mate are currently trained on a dataset up until 2014. Once we obtain the latest dataset, we will update the platform to enhance the recommendations with more up-to-date content and user preferences.</p>
+                    </div>    
+
+              
+                 
+{% endblock name %} 
+
+
+
+
+
+      

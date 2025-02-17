@@ -1,0 +1,54 @@
+{% extends "index.html" %}
+
+{% block name %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 position-relative">
+            <!-- Form Section -->
+            <div class="position-relative my-4">
+                <h2 class="text-center" style="margin:20px;">Welcome To Song Recommendation System</h2>
+
+                <!-- Song Recommendation Form -->
+                <form action="{% url 'songs' %}" method="POST" class="text-center">
+                    {% csrf_token %}
+                    <textarea class="form-control" rows="6" name="song_input" placeholder="Enter Song details here..."></textarea><br>
+                    <button type="submit" class="btn btn-lg btn-warning mt-3">Recommend</button>
+                </form>
+            </div>
+
+            <!-- Display recommendations or error message -->
+            {% if recommended_songs %}
+                <div class="mt-4">
+                    <h3 class="text-center">Recommended Songs:</h3>
+                    <ul class="list-group mt-3">
+                        {% for song in recommended_songs %}
+                            <li class="list-group-item">{{ song }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% elif error %}
+                <div class="alert alert-danger mt-4 text-center">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            <!-- Example Songs Floating Card -->
+            <div class="card position-absolute" style="top: 100px; right: -300px; width: 250px; border: 1px solid #ddd; border-radius: 8px; background-color:#e9ecef">
+                <div class="card-body">
+                    <h5 class="card-title">You can TRY following Songs</h5>
+                    <ul class="list-unstyled">
+                        <li>Sorry</li>
+                        <li>Dream</li>
+                        <li>I Don't Know Why</li>
+                        <li>Stay</li>
+                        <li>Not The Only One</li>
+                        <li>I'm Tired</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock name %}

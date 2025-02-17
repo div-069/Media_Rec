@@ -1,0 +1,54 @@
+{% extends "index.html" %}
+
+{% block name %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 position-relative">
+            <!-- Form Section -->
+            <div class="position-relative my-4">
+                <h2 class="text-center" style="margin:20px;">Welcome to Movie Recommendation System</h2>
+
+                <form action="{% url 'movies' %}" method="POST" class="text-center">
+                    {% csrf_token %}
+                    <textarea class="form-control" rows="6" name="movie_input" placeholder="Enter Movies details here..."></textarea><br>
+                    <button type="submit" class="btn btn-lg btn-warning mt-3">Recommend</button>
+                </form>
+            </div>
+            
+            <!-- Error Message Section -->
+            {% if error_message %}
+            <div class="alert alert-danger mt-3 text-center">
+                {{ error_message }}
+            </div>
+            {% endif %}
+            
+            <!-- Recommendation Section -->
+            {% if recommended_movies %}
+            <div class="mt-4">
+                <h3>Recommended Movie:</h3>
+                <ul>
+                    {% for movie in recommended_movies %}
+                        <li>{{ movie }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            
+            <!-- Example Movies Floating Card -->
+            <div class="card position-absolute" style="top: 100px; right: -300px; width: 250px; border: 1px solid #ddd; border-radius: 8px; background-color:#e9ecef;">
+                <div class="card-body">
+                    <h5 class="card-title">You Can TRY following Movies </h5>
+                    <ul class="list-unstyled">
+                          <li>Inception</li>
+                        <li>The Dark Knight</li>
+                        <li>Interstellar</li>
+                        <li>The Avengers</li>
+                        <li>Forrest Gump</li>
+                        <li>The Godfather</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock name %}

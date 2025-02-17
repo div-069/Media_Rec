@@ -1,0 +1,65 @@
+{% extends "index.html" %}
+
+{% block name %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 position-relative">
+            <!-- Form Section -->
+            <div class="position-relative my-4">
+                <h2 class="text-center" style="margin:20px;">Welcome to Book Recommendation System</h2>
+
+                <form action="{% url 'recommend' %}" method="POST" class="text-center">
+                    {% csrf_token %}
+                    <textarea class="form-control" rows="6" name="user_input" placeholder="Enter Book details here..."></textarea><br>
+                    <button type="submit" class="btn btn-lg btn-warning mt-3">Recommend</button>
+                </form>
+            </div>
+
+            <!-- Error Message Section -->
+            {% if error %}
+                <div class="alert alert-danger text-center">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            <!-- Recommendations Section -->
+            {% if data %}
+                <h3 class="text-center mt-4">Recommended Books:</h3>
+                <div class="row mt-3">
+                    {% for item in data %}
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card shadow-sm h-100">
+                                <img src="{{ item.2 }}" alt="{{ item.0 }}" class="card-img-top" style="max-height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ item.0 }}</h5>
+                                    <p class="card-text">
+                                        <strong>Author:</strong> {{ item.1 }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <!-- Example Books Floating Card -->
+            <div class="card position-absolute" style="top: 100px; right: -310px; width: 250px; border: 1px solid #ddd; border-radius: 8px; background-color:#e9ecef;">
+                <div class="card-body">
+                    <h5 class="card-title">You can TRY following  Books</h5>
+                    <ul class="list-unstyled">
+                        <li>The Catcher in the Rye</li>
+                        <li>To Kill a Mockingbird</li>
+                        <li>1984</li>
+                        <li>Pride and Prejudice</li>
+                        <li>The Great Gatsby</li>
+                        <li>The Da Vinci Code</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- Close the container div -->
+
+<!-- Footer Section (placed outside the container) -->
+
+{% endblock name %}
