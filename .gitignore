@@ -1,1 +1,4 @@
 myenv/
+books/pklfiles/*.pkl
+movies/pklfile_movie/*.pkl
+songs/pklfile_song/*.pkl
